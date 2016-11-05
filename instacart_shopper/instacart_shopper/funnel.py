@@ -4,12 +4,12 @@ import datetime, collections
 from .models import Shopper
 from .utils import *
 
-'''
-Exception raised for errors in the funnel service.
-Attributes:
-    message - error message explanation
-'''
 class FunnelError(Exception):
+	'''
+	Exception raised for errors in the funnel service.
+	Attributes:
+	    message - error message explanation
+	'''
     def __init__(self, message):
         self.message = message
 

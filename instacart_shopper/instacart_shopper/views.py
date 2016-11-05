@@ -12,8 +12,9 @@ from .funnel import *
 
 def home(request):
 	'''
-		/home is the landing page of the application
+	This API is the landing page of the application
 	'''
+	
 	return render(request,'instacart_shopper/home.html')
 
 
@@ -60,6 +61,7 @@ def confirmation(request):
 	POST API which saves the user credentials from request.session.
 	Once the user is registered, session objects are cleared except for email.
 	'''	
+	
 	if request.POST:
 		# Check if the user is already registered 
 		shopper = Shopper.objects.filter(email=request.session['email'])
@@ -96,6 +98,7 @@ def login(request):
 	'''
 	This POST API lets the user track an existing application
 	'''
+	
 	if request.POST:
 		email = request.POST['email']
 		if not email:
@@ -158,6 +161,7 @@ def logout(request):
 	'''
 	This POST API clears user's session and redirects user to home page of the application.
 	'''
+	
 	try:
 		del request.session['email']
 	except Exception as e:
@@ -170,6 +174,7 @@ def funnel_metrics(request):
 	This GET API takes the start_date and end_date as query params.
 	Generates the workflow_states with count of applicants grouped by the week in which they applied.
 	'''
+	
 	try:		
 		request_params = request.GET
 		if len(request_params) != 2:
@@ -190,14 +195,6 @@ def insert_seed_data(request,count):
 	This GET API is the helper method to generated some seed data to test funnel_metrics API.
 	It takes a count as input and generates that many applicants with random seed data.
 	'''
+	
 	generate_seed_data_populate_db(int(count))
 	return HttpResponse('Seed data loaded successfully!')
-
-
-
-
-
-
-
-
-
