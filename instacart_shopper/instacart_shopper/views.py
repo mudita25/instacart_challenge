@@ -142,6 +142,9 @@ def update(request):
  		context = Context({'shopper': shopper})
  		return render(request,'instacart_shopper/edit_application.html',context)
 	
+	'''
+	If user update is valid, update all fields except email.
+	'''
 	shopper.name = request.POST['name']
 	shopper.phone = request.POST['phone']
 	shopper.city = request.POST['city']
