@@ -136,7 +136,7 @@ def update(request):
 	If the input phone number is different from the registered phone:
 		check if the new phone number is not registered with another existing user
 	''' 
-	if shopper.phone != request.POST['phone'] and Shopper.objects.filter(phone = request.POST['phone']).exists():
+	if shopper.phone != int(request.POST['phone']) and Shopper.objects.filter(phone = int(request.POST['phone'])).exists():
 		logger.error("Phone number already registered with a different user. Phone no. : %s", request.POST['phone'])
  		messages.add_message(request, messages.ERROR, "Phone number already registered with a different user")
  		context = Context({'shopper': shopper})
