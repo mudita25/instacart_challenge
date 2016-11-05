@@ -81,7 +81,7 @@ The following design choices have helped scale this application:
    * This web application is currently running on the default development server provided by Django. Instead NGINX or other web servers can be used to handle production traffic.
    
 ## Screenshots
-Screenshots for the various web application states and API's have been hosted here : https://github.com/mudita25/instacart_challenge/screenshots/
+Screenshots for the various web application states and API's have been hosted here : https://github.com/mudita25/instacart_challenge/tree/master/screenshots
 
 ## TODO
 1. Improve upon UI/ UX.
