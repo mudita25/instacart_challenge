@@ -78,6 +78,8 @@ The following design choices have helped scale this application:
     Since the funnel queries are date-range based, a B-Tree index on application_date column helps run the query very efficiently and speeds up the funnel analytics API. 
     If the data grows heavily, we can also do a date/ week-range based partitioning for the table.
 
+   * This web application is currently running on the default development server provided by Django. Instead NGINX or other web servers can be used to handle production traffic.
+   
 ## Screenshots
 Screenshots for the various web application states and API's have been hosted here : https://github.com/mudita25/instacart_challenge/screenshots/
 
