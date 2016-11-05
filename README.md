@@ -10,7 +10,7 @@ Django is a open-source, high-level Python Web framework that encourages rapid d
 
 Django comes with default support for SQLite DB which is used in developing this application. But it can be easily ported to any other database (Postgres, MySQL, Oracle) supported by Django's ORM layer. 
 
-Django ORM also provides support for running DB migrations which is really helpful while developing web application and performing incremental db changes. Migrations for this application can be found here - 'https://github.com/mudita25/instacart_challenge/tree/master/instacart_shopper/instacart_shopper/migrations'.
+Django ORM also provides support for running DB migrations which is really helpful while developing web application and performing incremental db changes. Migrations for this application can be found here - https://github.com/mudita25/instacart_challenge/tree/master/instacart_shopper/instacart_shopper/migrations.
 
 This application is developed and tested with Python 2.7.11 and Django 1.10.2
 
