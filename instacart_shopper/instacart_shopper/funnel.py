@@ -10,8 +10,8 @@ class FunnelError(Exception):
 	Attributes:
 	    message - error message explanation
 	'''
-    def __init__(self, message):
-        self.message = message
+	def __init__(self, message):
+		self.message = message
 
 def generate_funnel_report(request_params):
  	start_date = None
