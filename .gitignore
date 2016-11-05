@@ -1,0 +1,4 @@
+*.sqlite
+*.pyc
+instacart_shopper/db.sqlite3
+instacart_shopper/db/development.sqlite3

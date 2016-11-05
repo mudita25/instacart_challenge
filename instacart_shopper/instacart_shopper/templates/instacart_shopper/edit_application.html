@@ -1,0 +1,76 @@
+{% extends "instacart_shopper/layout.html" %}
+
+{% block header %}
+    <div class="navbar container">  
+      <div class="navbar-inner">  
+        <div class="container-fluid">
+            <div class="btn-group pull-right">
+                <a class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" href="#">{{ shopper.email }} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/instacart_shopper/edit/"><i class="glyphicon glyphicon-pencil"></i> Edit Profile </a></li>
+                    <li><a href="/instacart_shopper/logout/"><i class="glyphicon glyphicon-log-out"></i> Logout </a></li>
+                </ul>
+            </div>
+        </div>  
+      </div>  
+    </div> 
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+   <section>
+    Hello <b>{{ shopper.name }}</b>
+    <br/>
+    <p>Your application status is currently <b>{{ shopper.workflow_state}}</b> </p>
+   </section>
+   
+   <hr>
+   
+   <div class="well">
+            <form class="form-horizontal" id="applicant_form" method="post" action="/instacart_shopper/update/" 
+                role="form" enctype="multipart/form-data" onsubmit="validate_form()">
+                {% csrf_token %}
+                  <div class="control-group">  
+                    <label class="control-label" for="name">Name</label>  
+                    <div class="controls">  
+                      <input size="30" type="text" id="name" name="name" value="{{ shopper.name }}" required>  
+                    </div>  
+                  </div>
+                  
+                  <div class="control-group">  
+                    <label class="control-label" for="email">Email</label>  
+                    <div class="controls">  
+                      <input size="30" style="background-color: #bfbfbf" type="email" id="email" name="email" value="{{ shopper.email }}" required readonly>  
+                    </div>  
+                  </div>   
+                  
+                  <div class="control-group">  
+                    <label class="control-label" for="phone">Phone</label>  
+                    <div class="controls">  
+                      <input size="30" type="text" id="phone" name="phone" value="{{ shopper.phone }}" pattern="[1-9][0-9]{9}" required>  
+                    </div>  
+                  </div>
+                  
+                  <div class="control-group">  
+                    <label class="control-label" for="city">City</label>  
+                    <div class="controls">  
+                      <input size="30" type="text" id="city" name="city" value="{{ shopper.city }}" required>  
+                    </div>  
+                  </div>   
+
+                  <div class="control-group">  
+                    <label class="control-label" for="state">State</label>  
+                    <div class="controls">  
+                      <input size="30" type="text" id="state" name="state" value="{{ shopper.state }}" required>  
+                    </div>  
+                  </div>                                                                   
+                  
+                 <div class="form-actions">  
+                     <button size="30" id="applicant_submit" type="submit" class="btn btn-success">Update</button>  
+                 </div>                    
+
+            </form>
+   </div>  
+</div>
+{% endblock %}
